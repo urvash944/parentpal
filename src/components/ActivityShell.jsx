@@ -1,4 +1,3 @@
-import { useNavigate } from "react-router-dom";
 import styles from "./ActivityShell.module.css";
 import { SkeletonActivity } from "./Skeleton";
 
@@ -8,15 +7,12 @@ export default function ActivityShell({
   loading, error, onRetry,
   children,
   done, onDone,
-  onBack, // NEW prop
+  onBack,
 }) {
-  const navigate = useNavigate();
 
   function handleBack() {
     if (onBack) {
-      onBack(); // use parent's back handler if provided
-    } else {
-      navigate("/learn");
+      onBack();
     }
   }
 
@@ -41,6 +37,13 @@ export default function ActivityShell({
       <span className={styles.bigEmoji}>⚠️</span>
       <p className={styles.errorText}>{error}</p>
       <button className={styles.retryBtn} onClick={onRetry}>Try Again</button>
+      <button
+        className={styles.retryBtn}
+        style={{ marginTop: 10, background: "var(--clr-border)", color: "var(--clr-text)" }}
+        onClick={handleBack}
+      >
+        ← Back
+      </button>
     </div>
   );
 
@@ -60,8 +63,19 @@ export default function ActivityShell({
         </div>
       </div>
       <button className={styles.doneBtn} onClick={onDone}>✅ Done</button>
-      <button className={styles.retryBtn} onClick={onRetry} style={{ marginTop: 10 }}>
+      <button
+        className={styles.retryBtn}
+        onClick={onRetry}
+        style={{ marginTop: 10 }}
+      >
         🔄 Try Again
+      </button>
+      <button
+        className={styles.retryBtn}
+        onClick={handleBack}
+        style={{ marginTop: 10, background: "var(--clr-border)", color: "var(--clr-text)" }}
+      >
+        ← Back to Learn
       </button>
     </div>
   );

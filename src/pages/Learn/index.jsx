@@ -113,7 +113,6 @@ if (activeAct === "vocab")   return <VocabActivity   onXP={handleActivityXP} onB
 if (activeAct === "shapes")  return <ShapesActivity  onXP={handleActivityXP} onBack={() => setActiveAct(null)} />;
 if (activeAct === "animals") return <AnimalsActivity onXP={handleActivityXP} onBack={() => setActiveAct(null)} />;
 if (activeAct === "poem")    return <PoemActivity    onXP={handleActivityXP} onBack={() => setActiveAct(null)} />;
-
   // ── Session flow ──
   if (sessionDone && session) return (
     <SessionSummary
