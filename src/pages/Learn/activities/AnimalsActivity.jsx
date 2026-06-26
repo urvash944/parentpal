@@ -5,7 +5,7 @@ import ActivityShell     from "../../../components/ActivityShell";
 import QuestionCard      from "../../../components/QuestionCard";
 import styles from "./Activity.module.css";
 
-export default function AnimalsActivity({ onXP }) {
+export default function AnimalsActivity({ onXP, onBack }) {
   const { activeChild }       = useChild();
   const [data, setData]       = useState(null);
   const [loading, setLoading] = useState(true);
@@ -33,6 +33,7 @@ export default function AnimalsActivity({ onXP }) {
       xpEarned={xpEarned}
       loading={loading} error={error} onRetry={load}
       done={done} onDone={() => onXP?.(xpEarned, "animals", score === questions.length)}
+      onBack={onBack}
     >
       {data && !done && questions[qIdx] && (
         <div>

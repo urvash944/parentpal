@@ -5,7 +5,7 @@ import ActivityShell  from "../../../components/ActivityShell";
 import QuestionCard   from "../../../components/QuestionCard";
 import styles from "./Activity.module.css";
 
-export default function MathActivity({ onXP }) {
+export default function MathActivity({ onXP, onBack }) {
   const { activeChild }       = useChild();
   const [data, setData]       = useState(null);
   const [loading, setLoading] = useState(true);
@@ -33,39 +33,38 @@ export default function MathActivity({ onXP }) {
       xpEarned={xpEarned}
       loading={loading} error={error} onRetry={load}
       done={done} onDone={() => onXP?.(xpEarned, "math", score === questions.length)}
-       onBack={onBack} 
+      onBack={onBack}
     >
-      {/* Move explanation INSIDE QuestionCard revealed state */}
-{data && !done && questions[qIdx] && (
-  <div>
-    <div className={styles.topicBanner}>
-      <span>{data.emoji}</span>
-      <span className={styles.topicText}>{data.topic}</span>
-    </div>
-    <QuestionCard
-      key={qIdx}
-      question={questions[qIdx].question}
-      options={questions[qIdx].options}
-      answer={questions[qIdx].answer}
-      hint={questions[qIdx].hint}
-      explanation={questions[qIdx].explanation}
-      questionNum={qIdx + 1}
-      total={questions.length}
-      onCorrect={() => setScore((s) => s + 1)}
-      onWrong={() => {}}
-    />
-    <button
-      className={styles.nextBtn}
-      style={{ marginTop: 14 }}
-      onClick={() => {
-        if (qIdx + 1 >= questions.length) setDone(true);
-        else setQIdx((i) => i + 1);
-      }}
-    >
-      {qIdx + 1 >= questions.length ? "Finish ✅" : "Next Question →"}
-    </button>
-  </div>
-)}
+      {data && !done && questions[qIdx] && (
+        <div>
+          <div className={styles.topicBanner}>
+            <span>{data.emoji}</span>
+            <span className={styles.topicText}>{data.topic}</span>
+          </div>
+          <QuestionCard
+            key={qIdx}
+            question={questions[qIdx].question}
+            options={questions[qIdx].options}
+            answer={questions[qIdx].answer}
+            hint={questions[qIdx].hint}
+            explanation={questions[qIdx].explanation}
+            questionNum={qIdx + 1}
+            total={questions.length}
+            onCorrect={() => setScore((s) => s + 1)}
+            onWrong={() => {}}
+          />
+          <button
+            className={styles.nextBtn}
+            style={{ marginTop: 14 }}
+            onClick={() => {
+              if (qIdx + 1 >= questions.length) setDone(true);
+              else setQIdx((i) => i + 1);
+            }}
+          >
+            {qIdx + 1 >= questions.length ? "Finish ✅" : "Next Question →"}
+          </button>
+        </div>
+      )}
     </ActivityShell>
   );
 }

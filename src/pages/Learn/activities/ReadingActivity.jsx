@@ -5,7 +5,7 @@ import ActivityShell  from "../../../components/ActivityShell";
 import QuestionCard   from "../../../components/QuestionCard";
 import styles from "./Activity.module.css";
 
-export default function ReadingActivity({ onXP }) {
+export default function ReadingActivity({ onXP, onBack }) {
   const { activeChild }            = useChild();
   const [data, setData]            = useState(null);
   const [loading, setLoading]      = useState(true);
@@ -37,6 +37,7 @@ export default function ReadingActivity({ onXP }) {
       xpEarned={xpEarned}
       loading={loading} error={error} onRetry={load}
       done={done} onDone={() => onXP?.(xpEarned, "reading", score === questions.length)}
+      onBack={onBack}
     >
       {data && !readDone && (
         <div>
@@ -48,7 +49,7 @@ export default function ReadingActivity({ onXP }) {
                 <span className={styles.storyType}>{data.type}</span>
               </div>
             </div>
-            {data.paragraphs.map((p, i) => (
+            {data.paragraphs?.map((p, i) => (
               <p key={i} className={styles.storyPara}>{p}</p>
             ))}
             {data.moral && (

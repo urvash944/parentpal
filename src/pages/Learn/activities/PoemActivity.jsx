@@ -5,14 +5,14 @@ import ActivityShell  from "../../../components/ActivityShell";
 import QuestionCard   from "../../../components/QuestionCard";
 import styles from "./Activity.module.css";
 
-export default function PoemActivity({ onXP }) {
-  const { activeChild }       = useChild();
-  const [data, setData]       = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError]     = useState("");
-  const [qIdx, setQIdx]       = useState(0);
-  const [score, setScore]     = useState(0);
-  const [done, setDone]       = useState(false);
+export default function PoemActivity({ onXP, onBack }) {
+  const { activeChild }         = useChild();
+  const [data, setData]         = useState(null);
+  const [loading, setLoading]   = useState(true);
+  const [error, setError]       = useState("");
+  const [qIdx, setQIdx]         = useState(0);
+  const [score, setScore]       = useState(0);
+  const [done, setDone]         = useState(false);
   const [readDone, setReadDone] = useState(false);
   const [activeLine, setActiveLine] = useState(0);
 
@@ -36,6 +36,7 @@ export default function PoemActivity({ onXP }) {
       xpEarned={xpEarned}
       loading={loading} error={error} onRetry={load}
       done={done} onDone={() => onXP?.(xpEarned, "poem", score === questions.length)}
+      onBack={onBack}
     >
       {data && !readDone && (
         <div>
@@ -46,7 +47,7 @@ export default function PoemActivity({ onXP }) {
               <span className={styles.poemTheme}>{data.theme}</span>
             </div>
             <div className={styles.poemLines}>
-              {data.lines.map((line, i) => (
+              {data.lines?.map((line, i) => (
                 <p
                   key={i}
                   className={`${styles.poemLine} ${i === activeLine ? styles.poemLineActive : ""}`}
