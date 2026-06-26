@@ -1,0 +1,190 @@
+.page {
+  padding: 28px 20px 16px;
+  min-height: 100%;
+}
+
+/* ── Top bar ── */
+.topBar {
+  display: flex; justify-content: space-between;
+  align-items: flex-start; margin-bottom: 24px;
+}
+.greeting { font-size: 14px; color: var(--clr-text-2); font-weight: 600; }
+.name {
+  font-family: var(--font-display);
+  font-size: 26px; font-weight: 800;
+  color: var(--clr-text); margin-top: 2px;
+}
+.profileBtn {
+  width: 48px; height: 48px; border-radius: 50%;
+  background: var(--clr-primary-lt);
+  border: 2px solid var(--clr-primary);
+  display: flex; align-items: center; justify-content: center;
+  transition: transform 0.15s;
+  flex-shrink: 0;
+}
+.profileBtn:hover { transform: scale(1.08); }
+.profileAvatar { font-size: 26px; line-height: 1; }
+.profileInitial {
+  font-size: 18px; font-weight: 900;
+  color: var(--clr-primary);
+}
+
+/* ── Empty state ── */
+.emptyCard {
+  background: var(--clr-surface);
+  border-radius: var(--r-xl); padding: 36px 24px;
+  text-align: center; box-shadow: var(--sh-sm);
+  margin-bottom: 28px;
+}
+.emptyEmoji { font-size: 52px; display: block; margin-bottom: 12px; }
+.emptyTitle {
+  font-family: var(--font-display);
+  font-size: 20px; font-weight: 800; margin-bottom: 8px;
+}
+.emptySub  { font-size: 14px; color: var(--clr-text-2); line-height: 1.5; margin-bottom: 20px; }
+.emptyBtn  {
+  background: var(--clr-primary); color: #fff;
+  padding: 12px 24px; border-radius: var(--r-full);
+  font-size: 15px; font-weight: 800;
+  box-shadow: var(--sh-md);
+}
+
+/* ── Child card ── */
+.childCard {
+  background: var(--clr-surface);
+  border-radius: var(--r-xl);
+  border: 2px solid var(--clr-border);
+  padding: 18px 16px 14px;
+  margin-bottom: 16px;
+  box-shadow: var(--sh-sm);
+  transition: box-shadow 0.2s;
+}
+
+.childCardTop {
+  display: flex; align-items: center;
+  gap: 14px; margin-bottom: 14px;
+}
+.childAvatarLg { font-size: 48px; line-height: 1; flex-shrink: 0; }
+.childCardInfo { flex: 1; }
+.childCardName {
+  font-family: var(--font-display);
+  font-size: 20px; font-weight: 800; color: var(--clr-text);
+}
+.levelBadge {
+  display: inline-block;
+  font-size: 12px; font-weight: 800;
+  padding: 4px 10px; border-radius: var(--r-full);
+  margin-top: 5px;
+}
+
+.xpSection { margin-bottom: 14px; }
+
+.statsRow { display: flex; gap: 10px; }
+
+/* ── Hero CTA ── */
+.heroBtn {
+  width: 100%;
+  display: flex; align-items: center; gap: 14px;
+  background: linear-gradient(135deg, var(--clr-primary) 0%, #4D96FF 100%);
+  border-radius: var(--r-xl);
+  padding: 18px 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 6px 24px rgba(108,99,255,0.35);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.heroBtn:hover  { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(108,99,255,0.4); }
+.heroBtn:active { transform: translateY(0); }
+
+.heroBtnIcon { font-size: 36px; flex-shrink: 0; }
+.heroBtnText { flex: 1; text-align: left; }
+.heroBtnTitle {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 18px; font-weight: 800;
+  color: #fff;
+}
+.heroBtnSub {
+  display: block;
+  font-size: 12px; color: rgba(255,255,255,0.8);
+  margin-top: 2px;
+}
+.heroBtnArrow { font-size: 20px; color: rgba(255,255,255,0.8); }
+
+/* ── Focus chips ── */
+.focusRow { margin-bottom: 24px; }
+.focusLabel {
+  font-size: 12px; font-weight: 700;
+  color: var(--clr-text-2); margin-bottom: 8px;
+  letter-spacing: 0.04em; text-transform: uppercase;
+}
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip {
+  background: var(--clr-surface);
+  border: 1.5px solid var(--clr-border);
+  border-radius: var(--r-full);
+  padding: 5px 12px;
+  font-size: 12px; font-weight: 700;
+  color: var(--clr-text-2);
+}
+
+/* ── Quick cards ── */
+.sectionTitle {
+  font-family: var(--font-display);
+  font-size: 17px; font-weight: 800;
+  color: var(--clr-text);
+  margin-bottom: 12px;
+}
+
+.quickGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 28px;
+}
+.quickCard {
+  display: flex; flex-direction: column;
+  align-items: flex-start;
+  background: var(--card-bg);
+  border-radius: var(--r-lg);
+  padding: 14px 12px;
+  border: 1.5px solid transparent;
+  transition: all 0.15s;
+  text-align: left;
+}
+.quickCard:hover {
+  border-color: var(--card-color);
+  transform: translateY(-2px);
+  box-shadow: var(--sh-sm);
+}
+.quickEmoji { font-size: 26px; margin-bottom: 6px; }
+.quickLabel {
+  font-size: 13px; font-weight: 800;
+  color: var(--card-color); line-height: 1;
+}
+.quickSub {
+  font-size: 10px; color: var(--clr-text-3);
+  margin-top: 3px; line-height: 1.3;
+}
+
+/* ── Child switcher ── */
+.switcherSection { margin-bottom: 16px; }
+.switcher { display: flex; gap: 10px; flex-wrap: wrap; }
+.switchBtn {
+  display: flex; align-items: center; gap: 8px;
+  padding: 9px 14px; border-radius: var(--r-full);
+  background: var(--clr-surface);
+  border: 1.5px solid var(--clr-border);
+  font-size: 13px; font-weight: 700; color: var(--clr-text-2);
+  transition: all 0.15s;
+}
+.switchBtn:hover { border-color: var(--clr-primary); color: var(--clr-primary); }
+.switchActive {
+  background: var(--clr-primary-lt) !important;
+  border-color: var(--clr-primary) !important;
+  color: var(--clr-primary) !important;
+}
+.switchAvatar { font-size: 18px; }
+.switchName   { font-size: 13px; }
+.childCard, .heroBtn, .emptyCard {
+  animation: pageFadeIn 0.35s ease;
+}

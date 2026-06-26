@@ -1,0 +1,12 @@
+.pill {
+  display: flex; flex-direction: column;
+  align-items: center; gap: 2px;
+  background: var(--clr-surface);
+  border-radius: var(--r-md);
+  padding: 10px 14px;
+  border: 1px solid var(--clr-border);
+  flex: 1;
+}
+.emoji  { font-size: 20px; line-height: 1; }
+.value  { font-size: 16px; font-weight: 900; line-height: 1.1; }
+.label  { font-size: 10px; color: var(--clr-text-3); font-weight: 600; letter-spacing: 0.03em; }

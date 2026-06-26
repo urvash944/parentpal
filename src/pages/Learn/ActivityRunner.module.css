@@ -1,0 +1,96 @@
+.page { padding: 24px 20px 16px; }
+
+.progressDots {
+  display: flex; justify-content: center; gap: 10px; margin-bottom: 24px;
+}
+.dot {
+  width: 38px; height: 8px; border-radius: var(--r-full);
+  transition: all 0.3s ease;
+}
+.dotPending { background: var(--clr-border); }
+.dotActive  { background: var(--clr-primary); }
+.dotDone    { background: var(--clr-green); }
+
+.actCard {
+  border-radius: var(--r-xl); padding: 28px 24px;
+  text-align: center; margin-bottom: 20px;
+  box-shadow: var(--sh-lg);
+}
+.actEmoji { font-size: 56px; display: block; margin-bottom: 8px; }
+.actType  {
+  font-size: 11px; font-weight: 800; letter-spacing: 0.12em;
+  color: rgba(255,255,255,0.75); margin-bottom: 8px;
+}
+.actTitle {
+  font-family: var(--font-display);
+  font-size: 22px; font-weight: 800;
+  color: #fff; margin-bottom: 10px;
+}
+.actDesc  { font-size: 14px; color: rgba(255,255,255,0.88); line-height: 1.5; margin-bottom: 16px; }
+.actStats { display: flex; justify-content: center; gap: 20px; }
+.stat     { font-size: 14px; font-weight: 800; color: rgba(255,255,255,0.9); }
+
+.instructBox {
+  background: var(--clr-surface);
+  border-radius: var(--r-lg); padding: 16px 18px;
+  margin-bottom: 16px; box-shadow: var(--sh-sm);
+  border-left: 4px solid var(--clr-primary);
+}
+.instructTitle { font-size: 13px; font-weight: 800; color: var(--clr-text); margin-bottom: 8px; }
+.instructText  { font-size: 13px; color: var(--clr-text-2); line-height: 1.6; }
+
+.doneList { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+.doneChip {
+  background: #EBF9EE; color: #2D7A3A;
+  font-size: 12px; font-weight: 700;
+  padding: 5px 12px; border-radius: var(--r-full);
+}
+
+.doneBtn {
+  width: 100%; height: 58px;
+  background: linear-gradient(135deg, #6BCB77, #4D96FF);
+  color: #fff; border-radius: var(--r-lg);
+  font-size: 18px; font-weight: 800;
+  box-shadow: 0 6px 24px rgba(107,203,119,0.35);
+  transition: transform 0.15s;
+}
+.doneBtn:hover { transform: translateY(-2px); }
+.doneBtn:active { transform: scale(0.97); }
+.loadingBox {
+  display: flex; flex-direction: column; align-items: center; gap: 12px;
+  padding: 32px; text-align: center; color: var(--clr-text-2);
+}
+.spinner {
+  width: 36px; height: 36px;
+  border: 4px solid var(--clr-border);
+  border-top-color: var(--clr-primary);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.contentBox {
+  background: var(--clr-surface);
+  border-radius: var(--r-lg); padding: 18px;
+  margin-bottom: 16px; box-shadow: var(--sh-sm);
+}
+.contentTitle {
+  font-family: var(--font-display);
+  font-size: 18px; font-weight: 800;
+  color: var(--clr-text); margin-bottom: 12px;
+}
+.para { font-size: 15px; line-height: 1.7; color: var(--clr-text); margin-bottom: 10px; }
+.poemLine { font-family: var(--font-display); font-size: 16px; line-height: 1.6; margin-bottom: 6px; }
+.moral {
+  background: #FFF8EB; border-radius: var(--r-md);
+  padding: 10px 14px; font-size: 13px; color: #B8860B; margin-top: 10px;
+}
+.emojiDisplay {
+  text-align: center; font-size: 40px; letter-spacing: 8px;
+  background: var(--clr-surface); border-radius: var(--r-lg);
+  padding: 24px; margin-bottom: 16px; box-shadow: var(--sh-sm);
+}
+.topicLine {
+  text-align: center; font-size: 14px; font-weight: 700;
+  color: var(--clr-primary); margin-bottom: 12px;
+}

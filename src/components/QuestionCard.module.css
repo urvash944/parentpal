@@ -1,0 +1,79 @@
+.card {
+  background: var(--clr-surface);
+  border-radius: var(--r-xl);
+  padding: 20px 18px;
+  box-shadow: var(--sh-md);
+}
+
+.topRow {
+  display: flex; justify-content: space-between;
+  align-items: center; margin-bottom: 14px;
+}
+.qNum { font-size: 12px; font-weight: 700; color: var(--clr-text-3); }
+.hintBtn {
+  background: #FFF8EB; color: #E8A020;
+  font-size: 12px; font-weight: 700;
+  padding: 5px 12px; border-radius: var(--r-full);
+  border: 1px solid #FFE0A0;
+}
+
+.question {
+  font-size: 17px; font-weight: 700;
+  color: var(--clr-text); line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+.hint {
+  background: #FFF8EB; border: 1px solid #FFE0A0;
+  border-radius: var(--r-md); padding: 10px 14px;
+  font-size: 13px; color: #B8860B;
+  margin-bottom: 14px;
+}
+
+.options { display: flex; flex-direction: column; gap: 10px; }
+
+.option {
+  width: 100%; padding: 14px 18px;
+  background: var(--clr-bg);
+  border: 2px solid var(--clr-border);
+  border-radius: var(--r-md);
+  font-size: 15px; font-weight: 600;
+  color: var(--clr-text); text-align: left;
+  transition: all 0.15s;
+}
+.option:hover:not(:disabled) {
+  border-color: var(--clr-primary);
+  background: var(--clr-primary-lt);
+}
+.correct {
+  border-color: var(--clr-green) !important;
+  background: #EBF9EE !important;
+  color: #2D7A3A !important;
+}
+.wrong {
+  border-color: var(--clr-secondary) !important;
+  background: #FFF0F0 !important;
+  color: #C62828 !important;
+}
+.dim { opacity: 0.45; }
+
+.tick  { color: var(--clr-green); font-weight: 900; }
+.cross { color: var(--clr-secondary); font-weight: 900; }
+
+.feedback {
+  margin-top: 14px; padding: 12px 16px;
+  border-radius: var(--r-md);
+  font-size: 14px; font-weight: 700;
+  text-align: center;
+}
+.feedbackGood { background: #EBF9EE; color: #2D7A3A; }
+.feedbackBad  { background: #FFF0F0; color: #C62828; }
+.explanationBox {
+  margin-top: 10px;
+  background: var(--clr-primary-lt);
+  border-radius: var(--r-md);
+  padding: 10px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--clr-primary);
+}

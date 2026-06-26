@@ -1,0 +1,92 @@
+.page { padding: 24px 20px 20px; }
+
+.parentCard {
+  display: flex; align-items: center; gap: 14px;
+  background: var(--clr-surface);
+  border-radius: var(--r-lg); padding: 16px;
+  box-shadow: var(--sh-sm); margin-bottom: 28px;
+}
+.parentAvatar {
+  width: 48px; height: 48px; border-radius: 50%;
+  background: var(--clr-primary);
+  color: #fff; font-size: 20px; font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.parentName  { font-size: 15px; font-weight: 700; color: var(--clr-text); }
+.parentEmail { font-size: 12px; color: var(--clr-text-3); margin-top: 2px; }
+.logoutBtn {
+  margin-left: auto;
+  background: #FFF0F0; color: #D32F2F;
+  font-size: 12px; font-weight: 700;
+  padding: 7px 12px; border-radius: var(--r-full);
+  white-space: nowrap;
+}
+
+.sectionHeader {
+  display: flex; align-items: center;
+  justify-content: space-between; margin-bottom: 14px;
+}
+.sectionTitle { font-family: var(--font-display); font-size: 18px; font-weight: 700; }
+.addBtn {
+  background: var(--clr-primary-lt); color: var(--clr-primary);
+  font-size: 13px; font-weight: 700;
+  padding: 7px 14px; border-radius: var(--r-full);
+}
+
+.empty { text-align: center; padding: 40px 20px; }
+.emptyEmoji { font-size: 48px; margin-bottom: 8px; }
+.emptyText  { color: var(--clr-text-2); margin-bottom: 20px; }
+.btnPrimary {
+  background: var(--clr-primary); color: #fff;
+  padding: 12px 28px; border-radius: var(--r-full);
+  font-size: 15px; font-weight: 700;
+  box-shadow: var(--sh-md);
+}
+
+.childList { display: flex; flex-direction: column; gap: 12px; }
+
+.childCard {
+  display: flex; align-items: center; gap: 14px;
+  background: var(--clr-surface);
+  border: 2px solid var(--clr-border);
+  border-radius: var(--r-lg); padding: 14px 16px;
+  cursor: pointer; transition: all 0.15s;
+}
+.childCard:hover { border-color: var(--clr-primary); box-shadow: var(--sh-sm); }
+.childActive {
+  border-color: var(--clr-primary) !important;
+  background: var(--clr-primary-lt) !important;
+}
+
+.childAvatar { font-size: 36px; flex-shrink: 0; }
+.childInfo   { flex: 1; }
+.childName   { font-size: 16px; font-weight: 800; color: var(--clr-text); }
+.childMeta   { font-size: 12px; color: var(--clr-text-2); margin-top: 2px; }
+.statRow     { display: flex; gap: 10px; margin-top: 6px; }
+.stat        { font-size: 12px; font-weight: 700; color: var(--clr-text-2); }
+
+.childActions { display: flex; flex-direction: column; align-items: flex-end; gap: 8px; }
+.activeBadge {
+  background: var(--clr-primary); color: #fff;
+  font-size: 10px; font-weight: 700;
+  padding: 3px 8px; border-radius: var(--r-full);
+}
+.deleteBtn {
+  background: none; font-size: 16px;
+  opacity: 0.5; transition: opacity 0.15s;
+}
+.deleteBtn:hover { opacity: 1; }
+.analyticsBtn {
+  width: 100%; display: flex; align-items: center; gap: 14px;
+  background: linear-gradient(135deg, var(--clr-primary), var(--clr-blue));
+  border-radius: var(--r-lg); padding: 14px 16px;
+  margin-bottom: 24px; box-shadow: var(--sh-md);
+  transition: transform 0.15s;
+}
+.analyticsBtn:hover { transform: translateY(-2px); }
+.analyticsIcon { font-size: 28px; }
+.analyticsText { flex: 1; text-align: left; }
+.analyticsTitle { font-size: 14px; font-weight: 800; color: #fff; }
+.analyticsSub   { font-size: 11px; color: rgba(255,255,255,0.8); margin-top: 2px; }
+.analyticsArrow { font-size: 18px; color: rgba(255,255,255,0.8); }

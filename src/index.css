@@ -1,0 +1,124 @@
+/* ─── ParentPal Design System ─── */
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Baloo+2:wght@400;600;700;800&display=swap');
+
+:root {
+  /* Brand Colors */
+  --clr-primary:     #6C63FF;
+  --clr-primary-lt:  #EAE8FF;
+  --clr-secondary:   #FF6B6B;
+  --clr-accent:      #FFD93D;
+  --clr-green:       #6BCB77;
+  --clr-blue:        #4D96FF;
+  --clr-orange:      #FF9F43;
+
+  /* Neutrals */
+  --clr-bg:          #F7F8FC;
+  --clr-surface:     #FFFFFF;
+  --clr-border:      #E8EAEF;
+  --clr-text:        #1A1A2E;
+  --clr-text-2:      #6B7280;
+  --clr-text-3:      #9CA3AF;
+
+  /* Spacing */
+  --sp-xs:  4px;
+  --sp-sm:  8px;
+  --sp-md:  16px;
+  --sp-lg:  24px;
+  --sp-xl:  32px;
+  --sp-2xl: 48px;
+
+  /* Radius */
+  --r-sm:   8px;
+  --r-md:   12px;
+  --r-lg:   20px;
+  --r-xl:   28px;
+  --r-full: 9999px;
+
+  /* Fonts */
+  --font-body:    'Nunito', sans-serif;
+  --font-display: 'Baloo 2', cursive;
+
+  /* Shadows */
+  --sh-sm: 0 2px 8px rgba(108,99,255,0.10);
+  --sh-md: 0 4px 20px rgba(108,99,255,0.14);
+  --sh-lg: 0 8px 32px rgba(108,99,255,0.18);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body, #root {
+  height: 100%;
+  background: var(--clr-bg);
+  font-family: var(--font-body);
+  color: var(--clr-text);
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  font-family: var(--font-body);
+}
+
+a { text-decoration: none; color: inherit; }
+
+input, textarea {
+  font-family: var(--font-body);
+  outline: none;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--clr-border); border-radius: 4px; }
+/* ─── Micro-interactions ─── */
+
+button {
+  transition: transform 0.1s ease, opacity 0.15s ease, box-shadow 0.15s ease;
+}
+button:active:not(:disabled) {
+  transform: scale(0.96);
+}
+
+/* ─── Page transition ─── */
+.page-fade {
+  animation: pageFadeIn 0.25s ease;
+}
+@keyframes pageFadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── Focus states for accessibility ─── */
+button:focus-visible,
+input:focus-visible,
+a:focus-visible {
+  outline: 2.5px solid var(--clr-primary);
+  outline-offset: 2px;
+}
+
+/* ─── Reduced motion support ─── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ─── Small screen refinements (320px+) ─── */
+@media (max-width: 360px) {
+  .layout { font-size: 14px; }
+}
+/* ─── Card lift on hover (desktop) ─── */
+@media (hover: hover) {
+  .layout button:not(:disabled):hover {
+    filter: brightness(1.02);
+  }
+}
+
+/* ─── Smoother emoji rendering ─── */
+.layout, .layout * {
+  text-rendering: optimizeLegibility;
+}

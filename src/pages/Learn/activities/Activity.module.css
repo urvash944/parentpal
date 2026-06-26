@@ -1,0 +1,126 @@
+/* Shared styles across all activity screens */
+
+.topicBanner {
+  display: flex; align-items: center; gap: 10px;
+  background: var(--clr-primary-lt);
+  border-radius: var(--r-md); padding: 10px 14px;
+  margin-bottom: 16px;
+  font-size: 14px; font-weight: 700; color: var(--clr-primary);
+}
+.topicText { font-size: 14px; }
+
+.nextBtn {
+  width: 100%; height: 52px;
+  background: linear-gradient(135deg, var(--clr-primary), var(--clr-blue));
+  color: #fff; border-radius: var(--r-lg);
+  font-size: 16px; font-weight: 800;
+  box-shadow: var(--sh-md); transition: transform 0.15s;
+  margin-top: 8px;
+}
+.nextBtn:hover { transform: translateY(-2px); }
+
+/* Reading */
+.storyCard {
+  background: var(--clr-surface);
+  border-radius: var(--r-xl); padding: 20px 18px;
+  box-shadow: var(--sh-sm); margin-bottom: 4px;
+}
+.storyHeader { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+.storyEmoji  { font-size: 36px; }
+.storyTitle  { font-family: var(--font-display); font-size: 18px; font-weight: 800; color: var(--clr-text); }
+.storyType   {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.06em;
+  text-transform: uppercase; color: var(--clr-text-3);
+}
+.storyPara {
+  font-size: 15px; line-height: 1.7; color: var(--clr-text);
+  margin-bottom: 12px;
+}
+.moral {
+  display: flex; gap: 10px; align-items: flex-start;
+  background: #FFF8EB; border-radius: var(--r-md);
+  padding: 12px 14px; margin: 12px 0;
+  font-size: 13px; font-weight: 600; color: #B8860B;
+}
+.moralIcon { font-size: 18px; flex-shrink: 0; }
+.vocabBox { margin-top: 16px; }
+.vocabTitle { font-size: 13px; font-weight: 800; color: var(--clr-text); margin-bottom: 8px; }
+.vocabList  { display: flex; flex-direction: column; gap: 6px; }
+.vocabItem  { display: flex; gap: 10px; align-items: baseline; }
+.vocabWord  { font-size: 14px; font-weight: 800; color: var(--clr-primary); min-width: 80px; }
+.vocabMeaning { font-size: 13px; color: var(--clr-text-2); }
+
+/* Explanation */
+.explanation {
+  background: var(--clr-primary-lt);
+  border-radius: var(--r-md); padding: 10px 14px;
+  font-size: 13px; font-weight: 600; color: var(--clr-primary);
+  margin-top: 10px;
+}
+
+/* Shapes */
+.shapeDisplay {
+  text-align: center; margin-bottom: 16px;
+  padding: 20px; background: var(--clr-surface);
+  border-radius: var(--r-xl); box-shadow: var(--sh-sm);
+}
+.shapeEmoji { font-size: 72px; }
+
+/* Animals */
+.animalDisplay {
+  text-align: center; margin-bottom: 16px;
+  padding: 20px; background: var(--clr-surface);
+  border-radius: var(--r-xl); box-shadow: var(--sh-sm);
+}
+.animalEmojis { font-size: 40px; letter-spacing: 6px; line-height: 1.4; }
+
+/* Fun fact */
+.funFact {
+  background: #FFF8EB; border: 1px solid #FFE0A0;
+  border-radius: var(--r-md); padding: 10px 14px;
+  font-size: 13px; font-weight: 600; color: #B8860B;
+  margin-top: 12px;
+}
+
+/* Vocab display */
+.displayBox {
+  text-align: center; padding: 16px;
+  background: var(--clr-surface); border-radius: var(--r-xl);
+  box-shadow: var(--sh-sm); margin-bottom: 14px;
+}
+.displayEmoji { font-size: 40px; display: block; margin-bottom: 8px; }
+.displayText  {
+  font-family: var(--font-display);
+  font-size: 28px; font-weight: 900;
+  color: var(--clr-primary); letter-spacing: 6px;
+}
+
+/* Poem */
+.poemCard {
+  background: linear-gradient(135deg, #f0eeff, #e8f4ff);
+  border-radius: var(--r-xl); padding: 24px 20px;
+  box-shadow: var(--sh-sm); margin-bottom: 16px;
+  border: 1.5px solid var(--clr-primary-lt);
+}
+.poemHeader { text-align: center; margin-bottom: 20px; }
+.poemEmoji  { font-size: 40px; display: block; margin-bottom: 8px; }
+.poemTitle  { font-family: var(--font-display); font-size: 20px; font-weight: 800; color: var(--clr-text); }
+.poemTheme  {
+  display: inline-block; margin-top: 6px;
+  background: var(--clr-primary-lt); color: var(--clr-primary);
+  font-size: 11px; font-weight: 700; padding: 3px 10px;
+  border-radius: var(--r-full); text-transform: uppercase; letter-spacing: 0.06em;
+}
+.poemLines { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
+.poemLine {
+  font-size: 16px; line-height: 1.6; color: var(--clr-text);
+  padding: 6px 10px; border-radius: var(--r-md);
+  cursor: pointer; transition: background 0.15s;
+  font-family: var(--font-display);
+}
+.poemLine:hover { background: rgba(108,99,255,0.08); }
+.poemLineActive { background: var(--clr-primary-lt) !important; color: var(--clr-primary); font-weight: 700; }
+.funActivity {
+  background: #FFF8EB; border-radius: var(--r-md); padding: 10px 14px;
+  font-size: 13px; color: #B8860B; margin-bottom: 16px;
+}

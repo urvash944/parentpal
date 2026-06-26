@@ -1,0 +1,60 @@
+.bigDisplay {
+  text-align: center; padding: 24px;
+  background: var(--clr-surface); border-radius: var(--r-xl);
+  box-shadow: var(--sh-sm); margin-bottom: 16px;
+}
+
+.emojiRow { font-size: 40px; letter-spacing: 8px; line-height: 1.4; }
+.shapeEmoji { font-size: 80px; }
+
+.wordEmoji { font-size: 48px; display: block; margin-bottom: 8px; }
+.wordDisplay {
+  font-family: var(--font-display);
+  font-size: 32px; font-weight: 900;
+  color: var(--clr-primary); letter-spacing: 8px;
+}
+
+.colorSwatch {
+  width: 120px; height: 120px; border-radius: var(--r-lg);
+  margin: 0 auto; box-shadow: var(--sh-md);
+  border: 4px solid #fff;
+}
+
+.nextBtn {
+  width: 100%; height: 52px; margin-top: 14px;
+  background: linear-gradient(135deg, var(--clr-primary), var(--clr-blue));
+  color: #fff; border-radius: var(--r-lg);
+  font-size: 16px; font-weight: 800;
+  box-shadow: var(--sh-md); transition: transform 0.15s;
+}
+.nextBtn:hover { transform: translateY(-2px); }
+
+.themeLabel {
+  text-align: center; font-size: 13px; font-weight: 700;
+  color: var(--clr-text-2); margin-bottom: 14px;
+}
+.memoryGrid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;
+}
+.memoryCard {
+  aspect-ratio: 1;
+  background: var(--clr-primary);
+  border-radius: var(--r-md);
+  font-size: 28px;
+  display: flex; align-items: center; justify-content: center;
+  color: #fff;
+  transition: all 0.25s ease;
+  box-shadow: var(--sh-sm);
+  cursor: pointer;
+  border: none;
+}
+.memoryFlipped {
+  background: var(--clr-surface);
+  border: 2px solid var(--clr-primary);
+  transform: scale(1.02);
+}
+.memoryMatched {
+  background: #EBF9EE !important;
+  border-color: var(--clr-green) !important;
+  opacity: 0.7;
+}

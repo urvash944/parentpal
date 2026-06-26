@@ -1,0 +1,85 @@
+.shell { min-height: 100vh; background: var(--clr-bg); display: flex; flex-direction: column; }
+
+.header {
+  display: flex; align-items: center; gap: 10px;
+  padding: 16px 20px;
+  background: var(--clr-surface);
+  border-bottom: 1px solid var(--clr-border);
+  box-shadow: var(--sh-sm);
+  position: sticky; top: 0; z-index: 10;
+}
+.back { background: none; color: var(--clr-primary); font-size: 14px; font-weight: 700; padding: 0; white-space: nowrap; }
+.headerInfo { display: flex; align-items: center; gap: 8px; flex: 1; }
+.headerEmoji { font-size: 24px; }
+.headerTitle { font-size: 15px; font-weight: 800; color: var(--clr-text); }
+.timer {
+  font-size: 13px; font-weight: 800; color: var(--clr-primary);
+  background: var(--clr-primary-lt); padding: 5px 12px; border-radius: var(--r-full);
+  white-space: nowrap;
+}
+
+.progressDots { display: flex; justify-content: center; gap: 6px; padding: 14px 0 0; }
+.dot { width: 28px; height: 6px; border-radius: var(--r-full); transition: all 0.3s; }
+.dotPending { background: var(--clr-border); }
+.dotActive  { background: var(--clr-primary); }
+.dotDone    { background: var(--clr-green); }
+
+.body { flex: 1; padding: 20px; }
+
+.scoreFooter {
+  text-align: center; padding: 12px;
+  font-size: 13px; font-weight: 700; color: var(--clr-text-2);
+  background: var(--clr-surface); border-top: 1px solid var(--clr-border);
+}
+
+/* Loading / Error */
+.center {
+  min-height: 100vh; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; padding: 24px; gap: 16px; text-align: center;
+}
+.bigEmoji  { font-size: 64px; }
+.loadText  { font-size: 16px; font-weight: 700; color: var(--clr-text-2); }
+.errorText { font-size: 15px; color: #C62828; font-weight: 600; }
+.spinner {
+  width: 36px; height: 36px; border: 4px solid var(--clr-border);
+  border-top-color: var(--clr-primary); border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+.retryBtn {
+  background: var(--clr-primary-lt); color: var(--clr-primary);
+  font-size: 14px; font-weight: 700; padding: 12px 24px; border-radius: var(--r-full);
+}
+
+/* Done state */
+.doneWrap {
+  min-height: 100vh; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; padding: 32px 24px; text-align: center;
+}
+.doneEmoji { font-size: 72px; margin-bottom: 12px; }
+.doneTitle {
+  font-family: var(--font-display); font-size: 24px; font-weight: 900;
+  color: var(--clr-text); margin-bottom: 24px;
+}
+.doneStats {
+  display: flex; align-items: center;
+  background: linear-gradient(135deg, var(--clr-primary), var(--clr-blue));
+  border-radius: var(--r-xl); padding: 18px 20px; margin-bottom: 16px;
+}
+.doneStat { display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 0 16px; }
+.doneStatVal { font-size: 22px; font-weight: 900; color: #fff; }
+.doneStatLbl { font-size: 11px; color: rgba(255,255,255,0.8); font-weight: 600; }
+.doneStatDiv { width: 1px; height: 36px; background: rgba(255,255,255,0.3); }
+.coinsText { font-size: 14px; font-weight: 700; color: #E8A020; margin-bottom: 20px; }
+.playAgainBtn {
+  width: 100%; max-width: 320px; height: 52px;
+  background: var(--clr-primary); color: #fff;
+  border-radius: var(--r-lg); font-size: 16px; font-weight: 800;
+  box-shadow: var(--sh-md); margin-bottom: 10px;
+}
+.backBtn {
+  width: 100%; max-width: 320px; height: 46px;
+  background: none; border: 1.5px solid var(--clr-border);
+  color: var(--clr-text-2); border-radius: var(--r-lg);
+  font-size: 14px; font-weight: 700;
+}
